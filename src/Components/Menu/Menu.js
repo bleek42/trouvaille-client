@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import ContextProvider from '../../Context'
-import './Menu.css'
+import ContextProvider from '../../Context';
+import './Menu.css';
 // import PastTrips from '../Nav/PastTrips';
 
 export default class Menu extends Component {
-  static contextType = ContextProvider
+  static contextType = ContextProvider;
 
   render() {
     return (
@@ -22,6 +22,6 @@ export default class Menu extends Component {
           </nav>
         }
       </div>
-    )
+    );
   }
 }
