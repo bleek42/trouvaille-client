@@ -1,0 +1,43 @@
+/* SASS CONFIG
+* ! variables can be declared and used with '$'-- kinda like jQuery !!!
+* ! @import '../path/to/_config.scss' to import all the functions and vars mixins and whatever else is put in here !
+* ! @mixins are sass functions ! use @include statement to apply them to the elements you are styling, just as you would any normall CSS property !
+* ! EXAMPLE *
+
+* $my-color: black;
+* $my-display: flex;
+
+* @mixin set-display($display) {
+
+}
+
+*/
+.trouvaille_header {
+  background-color: #f89330;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%; }
+  .trouvaille_header * {
+    background-color: transparent; }
+  .trouvaille_header h1 {
+    margin-top: 0;
+    text-align: center; }
+  .trouvaille_header .trouvaille-nav-dashboard {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px; }
+    .trouvaille_header .trouvaille-nav-dashboard a {
+      margin: 0 10px; }
+  .trouvaille_header .dashboard-logout {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 10px; }
+
+.landing-title {
+  text-align: center; }
+
+/*# sourceMappingURL=Header.css.map */

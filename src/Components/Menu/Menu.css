@@ -1,0 +1,47 @@
+/* Menu  */
+.bm-item-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  cursor: pointer;
+  /* background-color: #09014E; */
+}
+* {
+  box-sizing: border-box;
+}
+.menu-container {
+  /* position: fixed; */
+  width: auto;
+  z-index: 1;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 2em;
+  background-color: transparent;
+}
+
+.link-container {
+  text-align: center;
+  background-color: #09014e;
+  border: solid;
+  border-color: #f89330;
+  padding: 20px;
+  list-style-type: none;
+  font-size: 20px;
+  margin-bottom: 25px;
+  height: 100px;
+  color: #f89330;
+  line-height: 100px;
+}
+
+.bm-menu {
+  background-color: #09014e;
+}
+
+@media only screen and (max-width: 500px) {
+  /* trying to center the menu for screens smaller that 500px wide!! */
+  .menu-container {
+    align-content: center;
+  }
+}

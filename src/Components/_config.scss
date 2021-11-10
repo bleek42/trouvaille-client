@@ -1,0 +1,65 @@
+/* SASS CONFIG
+* ! variables can be declared and used with '$'-- kinda like jQuery !!!
+* ! @import '../path/to/_config.scss' to import all the functions and vars mixins and whatever else is put in here !
+* ! @mixins are sass functions ! use @include statement to apply them to the elements you are styling, just as you would any normall CSS property !
+* ! EXAMPLE *
+
+* $my-color: black;
+* $my-display: flex;
+
+* @mixin set-display($display) {
+    
+}
+
+*/
+
+$color1: #da8036;
+$color2: #0baa18;
+$color3: black;
+
+$textColor: #09014e;
+$shadeColor: #ead5e6;
+$backgroundColor: #fffaef;
+$borderColor: #f89330;
+$accentColor: #b9d3c2;
+$emphasisColor: #ca9ce1;
+
+@mixin button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin: 0;
+  text-decoration: none;
+  background: $textColor;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+@mixin focusButton {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+  background: #0d0366;
+}
+
+@mixin activeButton {
+  transform: scale(0.99);
+  background: #0d0366;
+}
+
+@mixin bubble {
+  padding: 1rem 2rem;
+  font-weight: bold;
+  list-style-type: none;
+  border: 1px solid $borderColor;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 3px;
+  cursor: pointer;
+}

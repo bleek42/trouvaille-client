@@ -1,0 +1,47 @@
+@import './config';
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+.register {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Baloo 2', cursive;
+	text-align: center;
+}
+
+.register h1 {
+	margin-bottom: 0;
+}
+
+.register p {
+	background-color: transparent;
+	line-height: 2em;
+	margin: 0;
+	text-indent: 0;
+}
+
+.register form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.registration-field {
+	background-color: transparent;
+	height: 30px;
+	border-top: black;
+	border-left: black;
+	border-right: black;
+}
+
+.sign-up {
+	margin-top: 1em;
+	background-color: #a5bbad;
+	color: #000000;
+	border: none;
+	padding: 0.5em;
+	border-radius: 20px;
+	cursor: pointer;
+}

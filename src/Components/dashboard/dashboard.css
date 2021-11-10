@@ -1,0 +1,132 @@
+/* SASS CONFIG
+* ! variables can be declared and used with '$'-- kinda like jQuery !!!
+* ! @import '../path/to/_config.scss' to import all the functions and vars mixins and whatever else is put in here !
+* ! @mixins are sass functions ! use @include statement to apply them to the elements you are styling, just as you would any normall CSS property !
+* ! EXAMPLE *
+
+* $my-color: black;
+* $my-display: flex;
+
+* @mixin set-display($display) {
+
+}
+
+*/
+.start-trip-link {
+  margin-top: 1em;
+  background-color: #a5bbad;
+  color: #000000;
+  border: none;
+  padding: 0.5em;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.add-button {
+  margin-bottom: 5px !important;
+}
+
+.dashboard-container {
+  text-align: center;
+  color: #09014e;
+}
+
+.new-places-container h1 {
+  width: auto;
+}
+
+.top-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.whole-option {
+  border: 3px solid #f89330;
+  margin: 5px auto;
+  width: 60%;
+  border-radius: 20px;
+}
+.whole-option .title-button-container {
+  background-color: #b9d3c2;
+  padding-bottom: 6px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+.whole-option div {
+  border-radius: 20px;
+}
+.whole-option h2 {
+  background-color: #b9d3c2;
+}
+.whole-option button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin: 0;
+  text-decoration: none;
+  background: #09014e;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: auto;
+}
+.whole-option button:focus,
+.whole-option button:hover {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+  background: #0d0366;
+}
+.whole-option button:active {
+  transform: scale(0.99);
+  background: #0d0366;
+}
+.option {
+  position: relative;
+  background-color: #b9d3c2;
+  border: solid 6px #09014e;
+  border-radius: 20px;
+  padding: 4px;
+  margin: 1px;
+  height: auto;
+}
+.option img {
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+.option button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin: 0;
+  text-decoration: none;
+  background: #09014e;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: auto;
+}
+.option button:focus,
+.option button:hover {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+  background: #0d0366;
+}
+.option button:active {
+  transform: scale(0.99);
+  background: #0d0366;
+}
+
+/*# sourceMappingURL=dashboard.css.map */

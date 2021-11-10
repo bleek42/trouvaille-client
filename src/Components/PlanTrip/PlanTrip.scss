@@ -1,0 +1,70 @@
+@import "../config.scss";
+
+$textColor: #09014e;
+$shadeColor: #ead5e6;
+$backgroundColor: #f4eee2;
+$borderColor: #f89330;
+$accentColor: #b9d3c2;
+$emphasisCololr: #ca9ce1;
+
+.plan-trip {
+  color: $textColor;
+  background-color: $emphasisCololr;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  padding: 10px;
+
+  label {
+    background-color: $emphasisCololr;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: oblique ;
+    margin: 5px;
+    margin-top: 10px;
+  }
+
+  input {
+    width: 50%;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid $textColor;
+    background-color: $accentColor;
+    border-radius: 10px;
+  }
+
+  select {
+    width: 50%;
+    height: 30px;
+    margin-left: auto;
+    margin-right: auto; 
+    border: solid $textColor;
+    background-color: $accentColor;
+    border-radius: 10px;
+  }
+
+  .buttons {
+    background-color: $emphasisCololr;
+    border-radius: inherit;
+  }
+
+  button {
+    @include button;
+    width: auto;    
+    margin: 10px;
+  }
+  button:focus,
+  button:hover {
+    @include focusButton;
+  }
+  button:active {
+    @include activeButton;
+  }
+}
+

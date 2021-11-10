@@ -1,0 +1,104 @@
+@import "../config.scss";
+
+$textColor: #09014e;
+$shadeColor: #ead5e6;
+$backgroundColor: #f4eee2;
+$borderColor: #f89330;
+$accentColor: #b9d3c2;
+$emphasisCololr: #ca9ce1;
+
+.start-trip-link{
+  margin-top: 1em;
+  background-color: #a5bbad;
+  color: #000000;
+  border: none;
+  padding: 0.5em;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.add-button {
+  margin-bottom: 5px !important;
+}
+.dashboard-container {
+  text-align: center;
+  color: $textColor;
+}
+
+.new-places-container {
+  h1 {
+    width: auto;
+  }
+}
+
+.top-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.whole-option {
+  border: 3px solid $borderColor;
+  margin: 5px auto;
+  width: 60%;
+  border-radius: 20px;
+
+  .title-button-container {
+    background-color: $accentColor;
+    padding-bottom: 6px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+  }
+
+  div {
+    border-radius: 20px;
+  }
+
+  h2 {
+    background-color: $accentColor;
+  }
+
+  button {
+    @include button;
+    width: auto;
+  }
+  button:focus,
+  button:hover {
+    @include focusButton;
+  }
+  button:active {
+    @include activeButton;
+  }   
+
+  img {
+    padding-top: 10px;
+    height: auto;
+    width: auto;
+  }
+  .title-button-container {
+  }
+}
+
+.option {
+  background-color: $accentColor;
+  border: solid 6px $textColor;
+  border-radius: 20px;
+  padding: 4px;
+  margin: 1px;
+  height: auto;
+  img {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 20px;
+  }
+  button {
+    @include button;
+    width: auto;
+  }
+  button:focus,
+  button:hover {
+    @include focusButton;
+  }
+  button:active {
+    @include activeButton;
+  }
+}

@@ -1,0 +1,88 @@
+/* SASS CONFIG
+* ! variables can be declared and used with '$'-- kinda like jQuery !!!
+* ! @import '../path/to/_config.scss' to import all the functions and vars mixins and whatever else is put in here !
+* ! @mixins are sass functions ! use @include statement to apply them to the elements you are styling, just as you would any normall CSS property !
+* ! EXAMPLE *
+
+* $my-color: black;
+* $my-display: flex;
+
+* @mixin set-display($display) {
+
+}
+
+*/
+.plan-trip {
+  color: #09014e;
+  background-color: #ca9ce1;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  padding: 10px;
+}
+.plan-trip label {
+  background-color: #ca9ce1;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: oblique;
+  margin: 5px;
+  margin-top: 10px;
+}
+.plan-trip input {
+  width: 50%;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid #09014e;
+  background-color: #b9d3c2;
+  border-radius: 10px;
+}
+.plan-trip select {
+  width: 50%;
+  height: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid #09014e;
+  background-color: #b9d3c2;
+  border-radius: 10px;
+}
+.plan-trip .buttons {
+  background-color: #ca9ce1;
+  border-radius: inherit;
+}
+.plan-trip button {
+  display: inline-block;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  margin: 0;
+  text-decoration: none;
+  background: #09014e;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: auto;
+  margin: 10px;
+}
+.plan-trip button:focus,
+.plan-trip button:hover {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+  background: #0d0366;
+}
+.plan-trip button:active {
+  transform: scale(0.99);
+  background: #0d0366;
+}
+
+/*# sourceMappingURL=PlanTrip.css.map */

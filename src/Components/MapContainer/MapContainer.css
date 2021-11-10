@@ -1,0 +1,57 @@
+/* SASS CONFIG
+* ! variables can be declared and used with '$'-- kinda like jQuery !!!
+* ! @import '../path/to/_config.scss' to import all the functions and vars mixins and whatever else is put in here !
+* ! @mixins are sass functions ! use @include statement to apply them to the elements you are styling, just as you would any normall CSS property !
+* ! EXAMPLE *
+
+* $my-color: black;
+* $my-display: flex;
+
+* @mixin set-display($display) {
+    
+}
+
+*/
+.map-container {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.map-container .link-bar {
+  overflow: auto;
+}
+.map-container .link-bar a {
+  line-height: 34px;
+}
+.map-container .link-bar .social-media-buttons {
+  float: right;
+}
+.map-container h3 {
+  text-align: center;
+}
+.map-container ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex: 1 0 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 200px;
+}
+.map-container ul li {
+  width: auto;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  list-style-type: none;
+  border: 1px solid #f89330;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 3px;
+  cursor: pointer;
+  cursor: default !important;
+  border: 1px solid #f89330;
+  text-shadow: 0px 1px 0px #ca9ce1;
+}
+
+/*# sourceMappingURL=MapContainer.css.map */

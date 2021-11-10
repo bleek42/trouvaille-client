@@ -1,0 +1,60 @@
+@import "../config.scss";
+
+.interests-container {
+  text-align: center;
+  .interests-header {
+    p {
+      margin: 25px auto;
+      text-align: center;
+      text-indent: 0;
+    }
+  }
+  .interests-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    input {
+      position: absolute;
+      left: -9999px;
+      // this is to completely get rid of the actual checkbox since the label also works to click on and this looks better.
+    }
+    label {
+      @include bubble();
+      background-color: $accentColor;
+      text-shadow: 0px 1px 0px #7cacde;
+      background: linear-gradient(to bottom, $emphasisColor 5%, #b38ac7 100%);
+      background-color: inherit;
+      color: $textColor;
+    }
+    label:hover {
+      border: 1px solid white;
+    }
+  }
+  button {
+    @include button;
+  }
+  button:focus,
+  button:hover {
+    @include focusButton;
+  }
+  button:active {
+    @include activeButton;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    li {
+      @include bubble();
+      border: 1px solid $borderColor;
+      background-color: $accentColor;
+      text-shadow: 0px 1px 0px $emphasisColor;
+      background: linear-gradient(to bottom, $shadeColor 5%, #dbc7d8 100%);
+      cursor: default;
+    }
+  }
+}

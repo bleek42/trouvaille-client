@@ -1,0 +1,51 @@
+@import "../config.scss";
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+
+//mobile-first
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./landing-page-idea.jpg);
+  background-size: 300px;
+  font-size: 1rem;
+}
+
+a {
+  all: unset;
+  color: black;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+p {
+  text-indent: 40px;
+  max-width: 75vw;
+  border-radius: 25px;
+  padding: 1em;
+  background-color: rgba(244, 238, 226, 0.9);
+}
+
+.landing-page a {
+  margin-top: 25px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  // border-color: #430c05;
+  background-color: #a5bbad;
+  color: #000000;
+  font-family: "Baloo 2", cursive;
+  padding: 5px 10px;
+}
+
+.landing-page p {
+  line-height: 2em;
+  text-align: center;
+}
+
+.landing-page span {
+  padding: 0.5em;
+  border-radius: 25px;
+}

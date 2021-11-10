@@ -1,0 +1,24 @@
+/* SASS CONFIG
+* ! variables can be declared and used with '$'-- kinda like jQuery !!!
+* ! @import '../path/to/_config.scss' to import all the functions and vars mixins and whatever else is put in here !
+* ! @mixins are sass functions ! use @include statement to apply them to the elements you are styling, just as you would any normall CSS property !
+* ! EXAMPLE *
+
+* $my-color: black;
+* $my-display: flex;
+
+* @mixin set-display($display) {
+    
+}
+
+*/
+h1,
+h2,
+h3,
+h4 {
+  color: #09014e; }
+
+body {
+  background-color: #fffaef; }
+
+/*# sourceMappingURL=App.css.map */

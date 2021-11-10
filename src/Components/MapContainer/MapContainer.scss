@@ -1,0 +1,37 @@
+@import "../config.scss";
+
+.map-container {
+  margin-left: 5px;
+  margin-right: 5px;
+  .link-bar {
+    overflow: auto;
+    a {
+      line-height: 34px;
+    }
+    .social-media-buttons {
+      float: right;
+    }
+  }
+  h2 {
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 200px;
+    li {
+      width: auto;
+      @include bubble;
+      cursor: default !important;
+      border: 1px solid $borderColor;
+      text-shadow: 0px 1px 0px $emphasisColor;
+    }
+  }
+}
