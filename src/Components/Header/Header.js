@@ -11,13 +11,10 @@ import LandingPage from '../LandingRoute/LandingPage';
 
 export default function Header() {
   return (
-    <div>
-      {window.location.pathname === '/' && (
-        <Fragment>
-          <Header />
-          <LandingPage />
-        </Fragment>
-      )}
+    <div className="header-container">
+      <header>
+        <h1>Trouvaille</h1>
+      </header>
     </div>
 
   );

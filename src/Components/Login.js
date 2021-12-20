@@ -15,11 +15,11 @@ export default function Login() {
       setIsLoading(true);
       return new Promise((resolve) => {
         setTimeout(resolve, timeout);
-        setIsLoading(false);
       });
     };
     const timeoutComplete = await mockAsyncTimeout();
     if (timeoutComplete) {
+      setIsLoading(false);
       console.log(name, value);
     }
   };
