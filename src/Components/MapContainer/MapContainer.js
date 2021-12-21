@@ -1,4 +1,4 @@
-import { Fragment, useState, useContext } from "react";
+import { Fragment, useState, useEffect, useContext } from "react";
 import React from 'react';
 import ContextProvider from '../../Context';
 // import TokenService from "../../services/token-service"
@@ -12,9 +12,46 @@ import './MapContainer.css';
 import Header from '../Header/Header';
 
 
-export default function MapContainer(props) {
+export default function MapContainer() {
   const [waypoints, setWaypoints] = useState([]);
+  const [error, setError] = useState(null);
   const context = useContext(ContextProvider);
+
+  useEffect(() => {
+    (async () => {
+      if (localStorage.getItem('user_id') && context.userTrip.destination) {
+        try {
+
+          const req = {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify({
+              origin: context.originCoords,
+              destination: context.endCoords,
+              waypoints: context.waypoints,
+              user_id: localStorage.getItem('user_id'),
+              destination_name: context.userTrip.destination
+            }),
+            credentials: 'same-origin'
+          };
+
+          const res = await fetch(`${process.env.REACT_APP_URL}/trips`, req);
+
+          if (!res.ok) {
+            setError(true);
+          }
+
+          const data = await res.json();
+          setWaypoints(data);
+        }
+        catch (err) {
+          console.error(err);
+        }
+      }
+    })();
+  }, [context.endCoords, context.originCoords, context.userTrip.destination, context.waypoints]);
 
   return (
     <Fragment>
@@ -22,6 +59,7 @@ export default function MapContainer(props) {
       <div className="map-container">
         <Map />
       </div>
+      {error && <h3>Error</h3>}
       <div className="link-bar">
         <a id="gmaps" href={`https://www.google.com/maps/dir/?api=1&origin=${context.originCoords.lat},${context.originCoords.lng}&destination=${context.originCoords.lat},${context.originCoords.lng}&travelmode=driving&waypoints=${waypoints}`}>Open in Google Maps</a>
       </div>

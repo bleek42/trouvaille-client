@@ -1,13 +1,21 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import { Link, Route } from 'react-router-dom';
 import ContextProvider from '../../Context';
-import { Spring } from 'react-spring/renderprops';
+import { useSpring, animated } from 'react-spring';
 import Header from '../Header/Header';
+import Interests from '../Interests/Interests';
 
 
 import './LandingPage.css';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function LandingPage(props) {
+
+  const context = useContext(ContextProvider);
+
+  const history = useHistory();
+
+  const springProps = useSpring({ to: { opacity: 1, marginTop: 0 }, from: { opacity: 0, marginTop: -500 } });
 
   useEffect(() => {
     const getGeoLocation = async () => {
@@ -15,6 +23,7 @@ export default function LandingPage(props) {
         await navigator.geolocation.getCurrentPosition((position) => {
           const { latitude, longitude } = position.coords;
           console.log({ latitude, longitude });
+          context.setOriginCoords({ lat: latitude, lon: longitude });
         });
       }
       catch {
@@ -25,9 +34,9 @@ export default function LandingPage(props) {
       }
     };
     getGeoLocation();
-    return () => {
-      if (localStorage.getItem('user_id')) props.history.push('/dashboard');
-    };
+    // return () => {
+    //   if (localStorage.getItem('user_id')) props.history.push('/dashboard');
+    // };
   }, []);
 
   return (
@@ -35,7 +44,7 @@ export default function LandingPage(props) {
       <header>
         <h1>Welcome to Trouvaille!</h1>
       </header>
-      <div className="landing-text">
+      <animated.div style={springProps} className="landing-text">
         <h4>Some of the best experiences are unplanned.. Some of the most memorable moments are spontaneous...</h4>
         <p>
           However, life doesn't always allow for that. For the times that you want great experiences that you are able to tell
@@ -46,7 +55,10 @@ export default function LandingPage(props) {
           we will map out a route for you to follow that lets you make those unforgettable memories, without all the worry of
           making it to your destination on time.
         </p>
-      </div>
+        <button onClick={() => history.push('/interests')}>
+          Get Started!
+        </button>
+      </animated.div>
     </div>
   );
 }

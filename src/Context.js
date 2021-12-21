@@ -23,8 +23,9 @@ const Context = React.createContext({
   setUser: () => { },
   processLogin: () => { },
   processLogout: () => { },
-})
-export default Context
+  setOriginCoords: () => { }
+});
+export default Context;
 
 //-----------------------------------//
 
@@ -54,68 +55,68 @@ export class ContextProvider extends Component {
     processLogin: () => { },
     radius: null,
     setRadius: () => { }
-  }
+  };
 
   componentDidMount() {
-    this.checkStorage()
+    this.checkStorage();
   }
 
   checkStorage = () => {
     if (localStorage.getItem("trouvailleData")) {
-      this.setState({ ...JSON.parse(localStorage.getItem("trouvailleData")) })
+      this.setState({ ...JSON.parse(localStorage.getItem("trouvailleData")) });
     }
-  }
+  };
 
   componentDidUpdate() {
-    localStorage.setItem("trouvailleData", JSON.stringify(this.state))
+    localStorage.setItem("trouvailleData", JSON.stringify(this.state));
   }
 
   toggleMenu = () => {
-    this.setState({ showMenu: !this.state.showMenu })
-  }
+    this.setState({ showMenu: !this.state.showMenu });
+  };
 
   setEndCoords = (endCoords) => {
-    this.setState({ endCoords })
-  }
+    this.setState({ endCoords });
+  };
   setRadius = (radius) => {
-    this.setState({ radius: radius })
-  }
+    this.setState({ radius: radius });
+  };
   setOriginCoords = (originCoords) => {
-    this.setState({ originCoords })
-  }
+    this.setState({ originCoords });
+  };
   //Add items to interests array
   addUserInterests = (checkedItem) => {
     if (this.state.userInterests.length === 0) {
-      return this.setState({ userInterests: [checkedItem] })
+      return this.setState({ userInterests: [checkedItem] });
     }
     else {
       //make sure checkedItem isn't already in the array!
-      let bool = true
+      let bool = true;
       bool = this.state.userInterests.every(interest => {
         if (interest === checkedItem) {
-          return false
+          return false;
         }
-        return true
-      })
+        return true;
+      });
       if (bool) {
-        return this.setState({ userInterests: [...this.state.userInterests, checkedItem] })
+        return this.setState({ userInterests: [...this.state.userInterests, checkedItem] });
       }
     }
-  }
+  };
 
   //remove items when they're unchecked
   removeUserInterests = (unchekedItem) => {
     for (let i = 0; i < this.state.userInterests.length; i++) {
       if (unchekedItem === this.state.userInterests[i]) {
-        this.state.userInterests.splice(i, 1)
-        this.setState({ userInterests: this.state.userInterests })
+        this.state.userInterests.splice(i, 1);
+        this.setState({ userInterests: this.state.userInterests });
       }
     }
-  }
+  };
 
   clearUserInterests = () => {
-    this.setState({ userInterests: [] })
-  }
+    this.setState({ userInterests: [] });
+  };
 
   //Store all all the values passed into the PlanTrip form!
   setTrip = (destination, detours, radius, time) => {
@@ -126,35 +127,35 @@ export class ContextProvider extends Component {
         maxRadius: radius,
         maxTime: time
       }
-    })
-  }
+    });
+  };
 
   setWaypoints = (waypoints) => {
     this.setState({
       waypoints: waypoints
-    })
-  }
+    });
+  };
 
   // set user object in state
   setUser = user => {
-    this.setState({ user })
-  }
+    this.setState({ user });
+  };
 
   //save the auth token to the window local storage
   processLogin = authToken => {
-    TokenService.saveAuthToken(authToken)
-    const jwtPayload = TokenService.parseAuthToken()
+    TokenService.saveAuthToken(authToken);
+    const jwtPayload = TokenService.parseAuthToken();
     this.setUser({
       id: jwtPayload.user_id,
       username: jwtPayload.sub,
-    })
-  }
+    });
+  };
 
   processLogout = () => {
-    TokenService.clearAuthToken()
-    localStorage.removeItem('user_id')
-    this.setUser({})
-  }
+    TokenService.clearAuthToken();
+    localStorage.removeItem('user_id');
+    this.setUser({});
+  };
 
   render() {
     const value = {
@@ -178,11 +179,11 @@ export class ContextProvider extends Component {
       processLogout: this.processLogout,
       setRadius: this.setRadius,
       radius: this.state.radius
-    }
+    };
     return (
       <Context.Provider value={value}>
         {this.props.children}
       </Context.Provider>
-    )
+    );
   }
 }
