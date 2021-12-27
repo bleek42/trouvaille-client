@@ -5,21 +5,21 @@ import './Register.css';
 import Header from './Header/Header';
 
 export default function Login() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     const { name, value } = ev.target;
     const mockAsyncTimeout = (timeout = 6000) => {
-      setIsLoading(true);
+      setLoading(true);
       return new Promise((resolve) => {
         setTimeout(resolve, timeout);
       });
     };
     const timeoutComplete = await mockAsyncTimeout();
     if (timeoutComplete) {
-      setIsLoading(false);
+      setLoading(false);
       console.log(name, value);
     }
   };
@@ -28,7 +28,8 @@ export default function Login() {
     <Fragment>
       <Header />
       <div className="login-container">
-        {isLoading && <h1>loading...</h1>}
+        {loading && <h1>loading...</h1>}
+        {error && <h1>error</h1>}
         <h2>Welcome Back! Please log in to continue...</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Username</label>
