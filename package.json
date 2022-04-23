@@ -19,7 +19,6 @@
     "google-maps-react": "^2.0.6",
     "jest-canvas-mock": "^2.3.1",
     "jwt-decode": "^2.2.0",
-    "node-sass": "^4.14.1",
     "polyline": "^0.2.0",
     "react": "^16.14.0",
     "react-burger-menu": "^2.9.2",
@@ -31,7 +30,8 @@
     "react-scripts": "3.4.1",
     "react-share": "^4.4.0",
     "react-spring": "^8.0.27",
-    "recompose": "^0.30.0"
+    "recompose": "^0.30.0",
+    "sass": "^1.50.1"
   },
   "scripts": {
     "start": "react-scripts start",

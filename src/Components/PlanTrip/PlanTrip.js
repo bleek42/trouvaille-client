@@ -7,6 +7,13 @@ import './PlanTrip.css';
 import HamburgerIcon from '../HamburberIcon/HamburgerIcon';
 
 export default function PlanTrip(props) {
+  useEffect(() => {
+    first;
+
+    return () => {
+      second;
+    };
+  }, [third]);
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -21,17 +28,31 @@ export default function PlanTrip(props) {
       <div className="plan-trip-container">
         <form className="plan-trip-form" onSubmit={handleSubmit}>
           <label htmlFor="destination">Where To?</label>
-          <input type="text" name="destination" placeholder="State / City / Zip Code" required />
+          <input
+            type="text"
+            name="destination"
+            placeholder="State / City / Zip Code"
+            required
+          />
           <label htmlFor="detours">How Many Detours?</label>
           <input type="number" name="detours" min="1" max="30" />
           <label htmlFor="radius">Max Detour Radius (km)</label>
           <input type="number" name="radius" min="1" max="20" />
           <label htmlFor="time">Max Road Trip Time (hrs)</label>
           <input type="number" name="time" min="1" max="100" />
-          <label htmlfor="start" className="start">Start Trip</label>
+          <label htmlfor="start" className="start">
+            Start Trip
+          </label>
           <input type="submit" name="start" className="start" />
-          <label htmlfor="cancel" className="cancel">Cancel</label>
-          <input type="button" name="cancel" className="cancel" onClick={() => props.history.push('/dashboard')} />
+          <label htmlfor="cancel" className="cancel">
+            Cancel
+          </label>
+          <input
+            type="button"
+            name="cancel"
+            className="cancel"
+            onClick={() => props.history.push('/dashboard')}
+          />
         </form>
       </div>
     </Fragment>
@@ -57,8 +78,6 @@ export default function PlanTrip(props) {
 //     this.context.setTrip(destination, detours, radius, time)
 //     this.props.history.push('/waypoints');
 //   }
-
-
 
 //   render() {
 //     return (
